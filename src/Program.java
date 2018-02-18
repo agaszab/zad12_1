@@ -1,11 +1,9 @@
-import java.util.Random;
-import java.util.Set;
-import java.util.TreeSet;
+import java.util.*;
 
 public class Program {
     public static void main(String[] args) {
 
-        TreeSet<Integer> liczby = new TreeSet<>();
+        ArrayList<Integer> liczby = new ArrayList<>();
         Random rand = new Random();
 
         int suma=0;
@@ -19,12 +17,17 @@ public class Program {
         }
         double srednia=suma/50;
 
+        Collections.sort(liczby);
+        System.out.println("Liczby większe od średniej: ");
         for (int liczba:liczby) {
-            if (liczba>srednia) System.out.print (liczba+" ");
+            if (liczba>srednia)
+            System.out.print (liczba+" ");
         }
+
+
         System.out.println();
-        System.out.println("Najmniejsza liczba ze zbioru: "+liczby.first());
-        System.out.println("Największa liczba ze zbioru: "+liczby.last());
+        System.out.println("Najmniejsza liczba ze zbioru: "+liczby.get(0));
+        System.out.println("Największa liczba ze zbioru: "+liczby.get(49));
         System.out.println("Średnia: "+srednia);
     }
 }
